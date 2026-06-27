@@ -15,11 +15,7 @@ public class MemberFormServlet extends HttpServlet {
         resp.setContentType("text/html; charset=UTF-8");
         String contextPath = req.getContextPath();
 
-        PrintWriter writer = resp.getWriter();
-        writer.println("<form action=\"" + contextPath + "/members\" method=\"post\">\n" +
-                "    username: <input type=\"text\" name=\"username\">\n" +
-                "    age: <input type=\"text\" name=\"age\">\n" +
-                "    <button type=\"submit\">전송</button>\n" +
-                "</form>");
+        String viewPath = "/WEB-INF/views/new-form.jsp";
+        req.getRequestDispatcher(viewPath).forward(req, resp);
     }
 }
