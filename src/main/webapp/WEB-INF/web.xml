@@ -17,14 +17,14 @@
     </servlet-mapping>
 
 <!--    springDispatcher 프론트 컨트롤러 서블릿 생성-->
-    <servlet>
-        <servlet-name>springDispatcher</servlet-name>
-        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-    </servlet>
-    
-    <servlet-mapping>
-        <servlet-name>springDispatcher</servlet-name>
-        <url-pattern>/spring/*</url-pattern>
-    </servlet-mapping>
+<!--    <servlet>-->
+<!--        <servlet-name>springDispatcher</servlet-name>-->
+<!--        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>-->
+<!--    </servlet>-->
+<!--    -->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>springDispatcher</servlet-name>-->
+<!--        <url-pattern>/spring/*</url-pattern>-->
+<!--    </servlet-mapping>-->
 </web-app>
 
