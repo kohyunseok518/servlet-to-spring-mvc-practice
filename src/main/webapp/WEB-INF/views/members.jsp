@@ -1,14 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="java.util.List" %>
-<%@ page import="com.org.domain.Member" %>
-
-<%
-    List<Member> members = (List<Member>) request.getAttribute("members");
-%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
 <body>
-<a href="<%= request.getContextPath() %>/members/new">회원 등록</a>
+<a href="${pageContext.request.contextPath}/members/new">회원 등록</a>
 
 <table>
     <thead>
@@ -19,17 +14,13 @@
     </tr>
     </thead>
     <tbody>
-    <%
-        for (Member member : members) {
-    %>
-    <tr>
-        <td><%= member.getId() %></td>
-        <td><%= member.getUsername() %></td>
-        <td><%= member.getAge() %></td>
-    </tr>
-    <%
-        }
-    %>
+    <c:forEach var="member" items="${members}">
+        <tr>
+            <td>${member.id}</td>
+            <td>${member.username}</td>
+            <td>${member.age}</td>
+        </tr>
+    </c:forEach>
     </tbody>
 </table>
 </body>

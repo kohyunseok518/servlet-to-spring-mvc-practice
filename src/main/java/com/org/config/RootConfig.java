@@ -4,9 +4,16 @@ package com.org.config;
 Service, Repository 같은 웹과 직접 관련 없는 Bean 자리
  */
 
+import com.org.repository.MemberRepository;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class RootConfig {
+
+    @Bean
+    public MemberRepository memberRepository() {
+        return new MemberRepository();
+    }
 }

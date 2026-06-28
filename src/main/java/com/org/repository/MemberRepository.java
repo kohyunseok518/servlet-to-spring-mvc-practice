@@ -11,16 +11,6 @@ public class MemberRepository {
     private static Map<Long, Member> store = new HashMap<>();
     private static Long sequence = 0L;
 
-    private static final MemberRepository instance = new MemberRepository();
-
-    // 싱글톤 패턴
-    public static MemberRepository getInstance() {
-        return instance;
-    }
-
-    private MemberRepository() {}
-
-
     public Member save(Member member) {
         member.setId(++sequence);
         store.put(member.getId(), member);
@@ -28,7 +18,7 @@ public class MemberRepository {
         return member;
     }
 
-    public static List<Member> findAll() {
+    public List<Member> findAll() {
         return new ArrayList<>(store.values());
     }
 
