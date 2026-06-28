@@ -9,6 +9,12 @@
     <thead>
     <p>로그인 사용자: ${username}</p>
     <p>권한: ${authorities}</p>
+    <form action="${pageContext.request.contextPath}/logout" method="post">
+        <input type="hidden"
+               name="${_csrf.parameterName}"
+               value="${_csrf.token}" />
+        <button type="submit">로그아웃</button>
+    </form>
     <tr>
         <th>id</th>
         <th>username</th>

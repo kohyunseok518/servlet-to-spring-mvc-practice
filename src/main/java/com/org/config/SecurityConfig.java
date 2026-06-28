@@ -36,7 +36,7 @@ public class SecurityConfig {
 
         UserDetails admin = User.withUsername("admin")
                 .password(encoder.encode("1111"))
-                .roles("ADMIN")
+                .roles("ADMIN", "USER")
                 .build();
 
         // 메모리에 이 가상 유저 duke를 등록하여 관리하는 매니저 객체를 반환한다.
@@ -50,7 +50,6 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         http
-                .csrf().disable()
                 // 인가 설정 - URL별 접근 권한을 정의
                 .authorizeRequests(auth -> auth
                         .antMatchers("/resources/**").permitAll()
