@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -21,11 +22,9 @@ public class SpringMemberController {
         return "new-form";
     }
 
+    // @RequestParam 어노테이션 사용, 스프링 프레임워크가 자동으로 형변환도 해
     @PostMapping("/members")
-    public String save(HttpServletRequest req) {
-        String username = req.getParameter("username");
-        int age = Integer.parseInt(req.getParameter("age"));
-
+    public String save(@RequestParam("username") String username, @RequestParam("age") int age) {
         Member member = new Member(username, age);
         memberRepository.save(member);
 
