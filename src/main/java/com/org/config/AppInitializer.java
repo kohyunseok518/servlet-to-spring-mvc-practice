@@ -10,7 +10,7 @@ public class AppInitializer extends AbstractAnnotationConfigDispatcherServletIni
     // RootConfig 등록
     @Override
     public Class<?>[] getRootConfigClasses() {
-        return new Class<?>[] {RootConfig.class};
+        return new Class<?>[] {RootConfig.class, SecurityConfig.class};
     }
 
     // WebMvcConfig 등록

@@ -7,6 +7,8 @@
 
 <table>
     <thead>
+    <p>로그인 사용자: ${username}</p>
+    <p>권한: ${authorities}</p>
     <tr>
         <th>id</th>
         <th>username</th>
